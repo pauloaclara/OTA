@@ -207,21 +207,21 @@ def souCardinal(keyLida):
         return True
     
 def souNumero(keyLida):
-    print("estouno souNumero\n")
-    print("recebi\n")
-    print(keyLida)
+    #print("estouno souNumero\n")
+    #print("recebi\n")
+    #print(keyLida)
     if keyLida >= 0 and keyLida <= 9:
-        print("passei a condição, tenho o numero\n")
-        print(keyLida)
-        print("e o tipo: \n")
-        print(type(keyLida))
+        #print("passei a condição, tenho o numero\n")
+        #print(keyLida)
+        #print("e o tipo: \n")
+        #print(type(keyLida))
         
         keyLida = str(keyLida)
-        print("fiz a transformação para string \n")
-        print(keyLida)
-        print("passei o tipo (str): \n")
-        print(type(keyLida))
-        print(keyLida)
+        #print("fiz a transformação para string \n")
+        #print(keyLida)
+        #print("passei o tipo (str): \n")
+        #print(type(keyLida))
+        #print(keyLida)
         constroiCodigoPorta(keyLida)
         #print("sou um numero")
         #print(keyLida)
@@ -229,23 +229,23 @@ def souNumero(keyLida):
     
 def constroiCodigoPorta(keyLida):
     global codigoPorta
-    print("estou no codigo porta\n")
-    print("recebi: ")
-    print(type(keyLida))
-    print(keyLida)
-    print("codigo acutal da porta")
-    print(codigoPorta)
-    print("comprimento do codigo da porta")
-    print(len(codigoPorta))
+    #print("estou no codigo porta\n")
+    #print("recebi: ")
+    #print(type(keyLida))
+    #print(keyLida)
+    #print("codigo acutal da porta")
+    #print(codigoPorta)
+    #print("comprimento do codigo da porta")
+    #print(len(codigoPorta))
     if len(codigoPorta)<=MAX_COMPRIMENTO_CODIGO_ENTRADA:
-        print("passei a condição de menor do que o maximo comprimento")
-        print("e tenho o codigo: ")
-        print(codigoPorta)
+        #print("passei a condição de menor do que o maximo comprimento")
+        #print("e tenho o codigo: ")
+        #print(codigoPorta)
         codigoPorta = codigoPorta + keyLida
-        print("depois de acrescentado o ultimo passei a ter")
-        print(codigoPorta)
+        #print("depois de acrescentado o ultimo passei a ter")
+        #print(codigoPorta)
     else:
-        print("se entre aqui, entrei erradamente no else do constroiCodigoPorta")
+        #print("se entre aqui, entrei erradamente no else do constroiCodigoPorta")
         codigoPorta=''
     #print(codigoPorta)
     return True  
@@ -274,7 +274,7 @@ def validaKey(keyLida):
         souNumero(keyLida)
         return
     else:
-        print("Erro, sou desconhecido")
+        #print("Erro, sou desconhecido")
         return False
 '''        
 def leKey():
@@ -315,9 +315,10 @@ def leKey():#nova
             User_Key = "null"              #Reset User_Key to null so it can be written to again
             #print("Key Code =",Key_Code)
             #validaKey(Key_Code)
-            print("*****")
-            print(keyLida)
+            #print("*****")
+            #print(keyLida)
             ledOnBoardBlink(leKey) #nao retirado, d«a erro, para diminuir o delay na leitura das teclas
+                                    #no ultimos testes efetuados na board de testes, depois de retirado não dei erro.
             validaKey(keyLida)
         
     utime.sleep(.1)  # A sleep just to slow things down to mimic work being performed
@@ -386,9 +387,9 @@ def abrePorta():
     #len(leKey())
     leKey()
     if len(codigoPorta)>=MAX_COMPRIMENTO_CODIGO_ENTRADA:
-        print("tenho 8")
+        #print("tenho 8")
         #ledOnBoardBlink(codigoCompleto) #comentado para reduzir o delay da pergunta/resposta ao servidor
-        print(codigoPorta)
+        #print(codigoPorta)
         
         if constroiURL(codigoPorta):#constroi o URL, compara o valor recebido, retorna boolean
             abreAFechadura()
